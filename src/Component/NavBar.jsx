@@ -71,8 +71,10 @@ function NavBar({ count, onClick, setFilter, orgProductApi, userData, setUserDat
                 <div>
                   <Button variant='outline-danger' onClick={handleLogOut}><span className='font-bold'>Log out</span></Button>
                 </div>
-                : <div className="loginSingin flex gap-3">
+                : <div className="loginSingin flex gap-3 justify-center ">
+                  <div className='m-2'>
                   <Button variant='outline-primary' onClick={() => setShowShowSignUp(true)}><span className='font-bold'>Sign up</span></Button>
+                  </div>
                   {showSignUp &&
                     <Register
                       Api={API}
@@ -80,7 +82,9 @@ function NavBar({ count, onClick, setFilter, orgProductApi, userData, setUserDat
                       setShowShowSignUp={setShowShowSignUp}
                       setUserData={setUserData}
                     />}
+                    <div className='m-2'>
                   <Button variant='outline-primary' onClick={() => setShowLogin(true)}><span className='font-bold'>Login</span></Button>
+                  </div>
                   {showLogin &&
                     <Login
                       Api={API}
