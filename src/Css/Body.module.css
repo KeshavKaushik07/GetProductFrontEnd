@@ -1,0 +1,14 @@
+.cart{
+    animation: slide 1.2s ;    
+}
+@keyframes slide {
+    0%{
+        transform: translateX(80px);
+    }
+    50%{
+        transform: translateX(-40px);
+    }
+    100%{
+        transform: translateX(90px);
+    }
+}
