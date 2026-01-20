@@ -30,9 +30,9 @@ const Cart = ({ cart, setCart, totalPrice , userData}) => {
   return (
     <>
     <h1 className="text-2xl font-bold m-10 flex justify-center ">Your Cart 🛒</h1>
-    <div className="max-w-4xl mx-auto m-6 mt-10 p-8">
+    <div className="max-w-4xl mx-auto m-6 mt-10 p-8 min-h-full">
       
-      <div className='mt-16 mb-4'>
+      <div className={`mt-16 mb-4 min-h-full flex flex-col justify-evenly ${cart.length > 1 ? "":"gap-28"}`}>
       {cart.length > 0 ? (
         cart.map(product => (
           <CartItem
