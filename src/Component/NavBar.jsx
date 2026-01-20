@@ -68,7 +68,7 @@ function NavBar({ count, onClick, setFilter, orgProductApi, userData, setUserDat
             </div>
             {
               userData ?
-                <div>
+                <div className="loginSingin flex justify-center ">
                   <Button variant='outline-danger' onClick={handleLogOut}><span className='font-bold'>Log out</span></Button>
                 </div>
                 : <div className="loginSingin flex gap-3 justify-center ">
