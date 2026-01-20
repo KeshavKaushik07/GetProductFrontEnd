@@ -80,6 +80,7 @@ const App = () => {
   },[userData]);
   return (
     <>
+    <div className="app">
       <BrowserRouter>
         <NavBar
           count={count}
@@ -89,6 +90,7 @@ const App = () => {
           userData={userData}
           setUserData={setUserData}
         />
+          <main className='content'>
         <Routes>
 
           <Route path='/'
@@ -118,12 +120,15 @@ const App = () => {
             />
           }>
           </Route>
+        
 
         </Routes>
+          </main>
 
         <Footer />
 
       </BrowserRouter>
+      </div>
       {/* <ToastContainer /> */}
     </>
   )
