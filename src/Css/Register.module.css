@@ -1,55 +1,34 @@
-.mainContainer{
-    width: 100vw;
-    height: 100vh;
-    background-color: transparent;
-    backdrop-filter: blur(20px);
-    position: relative;
-    position:absolute;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    left: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+/* Overlay (same as Login .container) */
+.mainContainer {
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(10px);
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
 }
-.container{
-    display: flex;
-    gap: 100px;
-    width: 720px;
-    height: 600px;
-    padding: 10px;
-    justify-content: center;
-    /* align-items: center; */
-    /* border: 2px double black ; */
-    position: relative;
-    background: linear-gradient(to right, #595CFF 0%, #C6F8FF 100%, #C6F8FF 100%, #C6F8FF 100%);
-    border-radius: 20px;
-    /* z-index: 999; */
-    animation: fadeIn 0.3s ease-in-out;
-    
+
+/* Card (same as Login .loginForm) */
+.container {
+  width: 700px;
+  background: #ffffff;
+  padding: 40px 30px;
+  border-radius: 12px;
+  box-shadow: 0px 8px 25px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  position: relative;
+  animation: fadeIn 0.3s ease-in-out;
 }
-.container img{
-    width:25%;
-    height: 30%;
-    margin-top: 150px;
-}
-.formContainer{
-    padding-top: 60px;
-    display: flex;
-    flex-direction: column;
-    font-size: xx-large;
-    gap: 30px;
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    color:black;
-    height: 520px;
-    width: 385px;
-    /* justify-content: center; */
-    align-items: center;
-    position: relative;
-    /* animation: fadeIn 0.3s ease-in-out; */
-}
+
+/* Animation */
 @keyframes fadeIn {
   from {
     transform: translateY(-20px);
@@ -60,107 +39,132 @@
     opacity: 1;
   }
 }
-.form{
-    width: 100%;
-    display: grid;
-    grid-template-columns: auto auto;
-    flex-direction: column;
-    font-size: medium;
-    gap: 10px;
- 
+
+/* Logo */
+.container img {
+  width: 60px;
+  margin: 0 auto;
 }
-.inputs{
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    /* font-size: medium; */
+
+/* Wrapper */
+.formContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
 }
-.form input{
-    width: 100%;
-    height: 40px;
-    border: none;
-    border-radius: 8px;
-    padding-left: 10px;
-    font-weight: bold;
-    background-color: aliceblue;
+
+/* Title text */
+.formContainer p {
+  font-size: 1.8rem;
+  font-weight: bold;
+  text-align: center;
+  color: #333;
 }
-.formContainer button{
-    width: 60%;
-    height: 40px;
-    border-radius: 10px;
-    font-size: x-large;
-    font-weight: bold;
-    background: linear-gradient(198deg, #595CFF 40%, #C6F8FF 140%);
-    cursor: pointer;
-    color: white;
+
+/* Form */
+.form {
+  display: grid;
+  grid-template-columns: auto auto;
+  gap: 15px;
 }
-.signup{
-    position: absolute;
-    bottom: 0;
+
+/* Input block */
+.inputs {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
 }
-.login{
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: medium;
+
+.inputs label {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #444;
 }
-.login button{
-    width: 30%;
-    height: 30px;
-    font-size: small;
-    margin-left: 5px;
-    font-weight: bold;
+
+.inputs input {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border 0.2s ease-in-out;
+  color: black;
 }
+
+.inputs input:focus {
+  border: 1px solid #0078d7;
+  outline: none;
+  box-shadow: 0 0 5px rgba(0, 120, 215, 0.3);
+}
+
+/* Login switch text */
+.login {
+  text-align: center;
+  font-size: 1rem;
+  color: #444;
+}
+
+.login button {
+  background: linear-gradient(135deg, #ff4b2b, #ff416c);
+  border: none;
+  border-radius: 8px;
+  padding: 6px 12px;
+  color: white;
+  font-size: 0.95rem;
+  font-weight: bold;
+  cursor: pointer;
+  margin-left: 5px;
+  transition: all 0.3s ease-in-out;
+}
+
+.login button:hover {
+  background: linear-gradient(135deg, #e03e1f, #e0355a);
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Signup button (same as Login button style) */
+.signup {
+  width: 100%;
+  height: 45px;
+  background: linear-gradient(135deg, #0078d7, #00a2ff);
+  border: none;
+  border-radius: 8px;
+  color: white;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.signup:hover {
+  background: linear-gradient(135deg, #005fa3, #0085cc);
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Close button */
+.button {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: transparent;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  color: #666;
+  transition: color 0.2s;
+  padding: 8px 15px;
+}
+
+.button:hover {
+  color: #000;
+  background: rgba(161, 158, 158, 0.6);
+  border-radius: 30px;
+}
+
+/* Mobile */
 @media screen and (max-width: 767px) {
-    .container{
-        gap: 10px;
-        font-size: medium;
-        height: fit-content;
-        width: fit-content;
-        padding: 3px;
-    }
-    .form{
-         gap: 10px;
-        font-size: medium;
-        justify-content: space-evenly;
-    }
-    .formContainer{
-         gap: 10px;
-        font-size: medium;
-    }
-    .inputs{
-         gap: 5px;
-        font-size: medium;
-        width: 100%;
-        height: 30px;
-        margin-top: 4px;
-    }
-   .login button{
-        font-size: medium;
-        padding: 2px;
-    }
-    .form{
-        grid-template-columns: auto;
-    }
-    .form input{
-        border-radius: 4px;
-    }
-}
-.button{
-    width: fit-content;
-    height: fit-content;
-    font-size: x-large;
-    padding: 8px 15px;
-    color: black;
-    border-radius: 50%;
-    position: absolute;
-    right: 18px;
-    font-weight: bolder;
-    transition: 0.2s ease-in-out;
-}
-.button:hover{
-    background-color: rgba(177, 173, 173,0.6);
+  .container {
+    width: 90%;
+    padding: 30px 20px;
+  }
 }
