@@ -11,7 +11,7 @@ function Products({product,onClick,itemDetail}) {
       onClick={()=>itemDetail(product)}
       className="w-full"/>
   </figure>
-  <div className="card-body">
+  <div className="card-body flex flex-col justify-evenly">
     <h2 className="card-title">{product.name}</h2>
     <p>{product.description}</p>
     <div className="price flex gap-3 m-3">

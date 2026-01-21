@@ -86,7 +86,7 @@ const Search = ({ filter }) => {
 
       {/* Search button */}
       <div>
-        <Button variant="outline-success">
+        <Button variant="outline-success" onClick={() => setShowSuggestion(false)}>
           <span className='text-xl font-bold'>Search</span>
         </Button>
       </div>
