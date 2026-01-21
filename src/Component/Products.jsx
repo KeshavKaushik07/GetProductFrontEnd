@@ -8,7 +8,8 @@ function Products({product,onClick,itemDetail}) {
     <img
       src={product.image}
       alt="Shoes" 
-      onClick={()=>itemDetail(product)}/>
+      onClick={()=>itemDetail(product)}
+      className="w-full"/>
   </figure>
   <div className="card-body">
     <h2 className="card-title">{product.name}</h2>
