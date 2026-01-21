@@ -89,13 +89,7 @@ const Body = ({ noFilter, setApiData, Api, toAddCart, orgPoductApi, setNoFilter,
         </div>
       )}
 
-      {noFilter &&
-        <div className="w-full flex justify-center mb-2 px-8">
-          <Button variant="danger" className='mx-5'>
-            <span className='text-xl font-bold' onClick={setApiData}>Remove Filter</span>
-          </Button>
-        </div>
-      }
+      
     </>
   );
 }

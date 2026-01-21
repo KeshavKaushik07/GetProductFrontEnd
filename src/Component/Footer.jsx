@@ -6,8 +6,8 @@ const Footer = () =>
         <div className="container-fluid text-center text-md-left">
             <div className="flex-col flex sm:flex-row justify-evenly">
                 <div className="col-md-6 mt-md-0 mt-3 justify-items-start">
-                    <h5 className="text-uppercase">Footer Content</h5>
-                    <p>Here you can use rows and columns to organize your footer content.</p>
+                    <h5 className="text-uppercase">GetProduct! — Shop smart. Live better.</h5>
+                    <p>Quality products, secure payments, and a seamless shopping experience—all in one place.</p>
                 </div>
 
                 <hr className="clearfix w-100 d-md-none pb-0" />
