@@ -55,8 +55,8 @@ const Cart = ({ cart, setCart, totalPrice , userData}) => {
     {cart.length > 0 && <div className="flex flex-col items-center m-7 gap-6 text-2xl font-bold"> 
       <span>Total Price : ${totalPrice}</span> 
       {userData ? 
-      <button className="bg-amber-300 w-48 px-4 py-3 rounded cursor-pointer"> Checkout </button> 
-    : <button className="bg-amber-200 w-48 px-4 py-3 rounded" disabled title='Login to checkout'> Checkout </button> }
+      <button className="bg-amber-300 sm:w-48 px-4 py-3 rounded cursor-pointer mb-3"> Checkout </button> 
+    : <button className="bg-amber-200 sm:w-48 px-4 py-3 rounded mb-3" disabled title='Login to checkout'> Checkout </button> }
       
       
       </div>}

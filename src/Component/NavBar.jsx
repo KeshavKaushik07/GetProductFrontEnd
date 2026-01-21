@@ -40,14 +40,15 @@ function NavBar({ count, onClick, setFilter, orgProductApi, userData, setUserDat
   //    }
   // }
   return (
-    <div className='sticky top-0 z-10  '>
-      <Navbar expand="lg" className="bg-body-tertiary text-white  ">
+    <div className='sticky top-0 z-10 '>
+      <Navbar expand="lg" className="bg-black navbar-dark">
         <Container fluid className=' bg-black text-2xl p-4'>
           <NavLink to={"/"} style={{ textDecoration: "none" }}>
             <span className='text-2xl md:text-4xl text-white font-bold'>GetProduct!</span>
 
           </NavLink>
-          <Navbar.Toggle aria-controls="navbarScroll" />
+          <Navbar.Toggle aria-controls="navbarScroll" 
+          className="border-white text-white rounded-md"/>
           <Navbar.Collapse id="navbarScroll">
             <Nav
               className="me-auto my-2 my-lg-0"
@@ -99,6 +100,7 @@ function NavBar({ count, onClick, setFilter, orgProductApi, userData, setUserDat
         </Container>
       </Navbar>
     </div>
+
   );
 }
 // function LogOut() {

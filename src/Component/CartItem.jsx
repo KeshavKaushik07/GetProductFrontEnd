@@ -3,7 +3,7 @@ import React from 'react';
 const CartItem = ({ product, onIncrement, onDecrement, onDelete }) => {
   
   return (
-    <div className="flex flex-col sm:flex-row items-center justify-between p-4 border rounded-lg bg-white mb-4 shadow-xl gap-2">
+    <div className="flex flex-col sm:flex-row items-center justify-between p-2 border rounded-lg bg-white mb-2 shadow-2xl gap-2 w-fit m-5  ">
       <img src={product.image} alt={product.name} className="w-20 h-20 object-cover rounded-md" />
 
       <div className="flex-1 ml-4">
@@ -15,14 +15,14 @@ const CartItem = ({ product, onIncrement, onDecrement, onDelete }) => {
       <div className="flex items-center gap-2">
         <button
           onClick={() => onDecrement(product.id)}
-          className="px-2 py-1 bg-gray-200 rounded hover:bg-gray-300"
+          className="px-2 py-1 bg-gray-200 rounded hover:bg-gray-300 shadow-xl font-bold"
         >
           −
         </button>
-        <span className="px-3 font-semibold">{product.quantity}</span>
+        <span className="px-3 font-bold">{product.quantity}</span>
         <button
           onClick={() => onIncrement(product.id)}
-          className="px-2 py-1 bg-gray-200 rounded hover:bg-gray-300"
+          className="px-2 py-1 bg-gray-200 rounded hover:bg-gray-300 shadow-xl font-bold"
         >
           +
         </button>
