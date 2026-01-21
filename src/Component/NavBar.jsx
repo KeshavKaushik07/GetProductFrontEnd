@@ -54,10 +54,10 @@ function NavBar({ count, onClick, setFilter, orgProductApi, userData, setUserDat
               className="me-auto my-2 my-lg-0"
 
             >
-              <Nav.Link as={NavLink} to="/" className="text-white font-extrabold m-3 p-3" style={({ isActive }) => ({ background: isActive ? "blue" : "black", borderRadius: "10px" })}>
+              <Nav.Link as={NavLink} to="/" className="text-white font-extrabold sm:m-3 sm:p-3 m-2 p-2" style={({ isActive }) => ({ background: isActive ? "blue" : "black", borderRadius: "10px" })}>
                 Home
               </Nav.Link>
-              <Nav.Link as={NavLink} to="/cart" className="text-white font-bold m-3 p-3" style={({ isActive }) => ({ background: isActive ? "Blue" : "black", borderRadius: "10px" })}>
+              <Nav.Link as={NavLink} to="/cart" className="text-white font-bold sm:m-3 sm:p-3 m-2 p-2" style={({ isActive }) => ({ background: isActive ? "Blue" : "black", borderRadius: "10px" })}>
                 <span className='text-xl md:text-3xl'>🛒 <span className='bg-red-500 p-1 md:p-2 rounded-full'>{count}</span></span>
 
               </Nav.Link>
