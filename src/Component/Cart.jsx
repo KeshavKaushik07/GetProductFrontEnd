@@ -35,7 +35,7 @@ const Cart = ({ cart, setCart, totalPrice , userData}) => {
     <CheckOut/>:
     <>
     <h1 className="text-2xl font-bold m-10 flex justify-center">Your Cart 🛒</h1>
-    <div className="max-w-4xl mx-auto m-6 mt-10 p-8 min-h-lvh">
+    <div className="max-w-4xl mx-auto m-6 mt-10 p-8 min-h-[80vh]">
       
       <div className={`mt-16 mb-4 min-h-full flex flex-col justify-evenly ${cart.length > 1 ? "":"gap-28"}`}>
       {cart.length > 0 ? (
@@ -50,8 +50,8 @@ const Cart = ({ cart, setCart, totalPrice , userData}) => {
         ))
       ) : (<>
         <p className="text-gray-500 text-2xl mb-10 mt-10 h-32 flex justify-center">Your cart is empty !</p>
-        <NavLink to="/">
-          <button className='m-4 bg-gray-300 p-2 pb-3 font-bold rounded-xl overflow-hidden text-2xl ' style={{ borderRadius: "20px" }} ><sub> <span className='text-3xl'>←  </span></sub> Back to Shopping</button>
+        <NavLink to="/" className="w-fit self-center" style={{textDecoration:"none"}}>
+          <button className='m-4 bg-gray-300 p-2 pb-3 font-bold overflow-hidden text-2xl ' style={{ borderRadius: "20px" }} ><sub> <span className='text-3xl'>←  </span></sub> Back to Shopping</button>
         </NavLink>
       </>)}
       </div>

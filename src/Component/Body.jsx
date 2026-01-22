@@ -41,7 +41,7 @@ const Body = ({ noFilter, setApiData, Api, toAddCart, orgPoductApi, setNoFilter,
         </div>
       }
 
-      <div className="cards grid gap-5 m-5 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-4 ">
+      <div className="cards grid gap-5 m-5 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-4 min-h-[80vh]">
         {Api.map((item, index) => (
           <Products product={item} key={index} onClick={toAddCart} itemDetail={itemDetail} />
         ))}
