@@ -51,7 +51,7 @@ const Body = ({ noFilter, setApiData, Api, toAddCart, orgPoductApi, setNoFilter,
       {showItemDetail && (
         <div className="fixed inset-0 bg-black bg-opacity-50 backdrop-blur-sm flex justify-center items-center z-50 animate-fadeIn">
           <div className="relative bg-white p-3 rounded-2xl shadow-2xl flex flex-col md:flex-row gap-6 transform transition-all scale-95 hover:scale-100 justify-center items-center">
-            
+
             {/* Product Image */}
             <div className="img flex-shrink-0">
               <img
@@ -73,7 +73,7 @@ const Body = ({ noFilter, setApiData, Api, toAddCart, orgPoductApi, setNoFilter,
                   <del className="text-gray-400">${productDetail.originalPrice}</del>
                 </div>
               </div>
-              <button className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-xl mt-4 shadow-md transition" onClick={()=>toAddCart(productDetail)}>
+              <button className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-xl mt-4 shadow-md transition" onClick={() => toAddCart(productDetail)}>
                 Add to Cart
               </button>
             </div>
@@ -89,7 +89,7 @@ const Body = ({ noFilter, setApiData, Api, toAddCart, orgPoductApi, setNoFilter,
         </div>
       )}
 
-      
+
     </>
   );
 }

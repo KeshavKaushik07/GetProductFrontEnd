@@ -47,8 +47,8 @@ function NavBar({ count, onClick, setFilter, orgProductApi, userData, setUserDat
             <span className='text-2xl md:text-4xl text-white font-bold'>GetProduct!</span>
 
           </NavLink>
-          <Navbar.Toggle aria-controls="navbarScroll" 
-          className="border-white text-white rounded-md"/>
+          <Navbar.Toggle aria-controls="navbarScroll"
+            className="border-white text-white rounded-md" />
           <Navbar.Collapse id="navbarScroll">
             <Nav
               className="me-auto my-2 my-lg-0"
@@ -74,7 +74,7 @@ function NavBar({ count, onClick, setFilter, orgProductApi, userData, setUserDat
                 </div>
                 : <div className="loginSingin flex gap-3 justify-center ">
                   <div className='m-2'>
-                  <Button variant='outline-primary' onClick={() => setShowShowSignUp(true)}><span className='font-bold'>Sign up</span></Button>
+                    <Button variant='outline-primary' onClick={() => setShowShowSignUp(true)}><span className='font-bold'>Sign up</span></Button>
                   </div>
                   {showSignUp &&
                     <Register
@@ -83,8 +83,8 @@ function NavBar({ count, onClick, setFilter, orgProductApi, userData, setUserDat
                       setShowShowSignUp={setShowShowSignUp}
                       setUserData={setUserData}
                     />}
-                    <div className='m-2'>
-                  <Button variant='outline-primary' onClick={() => setShowLogin(true)}><span className='font-bold'>Login</span></Button>
+                  <div className='m-2'>
+                    <Button variant='outline-primary' onClick={() => setShowLogin(true)}><span className='font-bold'>Login</span></Button>
                   </div>
                   {showLogin &&
                     <Login
