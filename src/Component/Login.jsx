@@ -10,14 +10,17 @@ const Login = ({ setShowLogin, setShowShowSignUp, setUserData, Api }) => {
   const [showPassword,setShowPassword] = useState("false");
   // const [success,setSuccess] = useState(false);
   // const [error,setError] = useState(false);
+const [showSpinner, setShowSpinner] = useState(false);
 
  async function handleLogin(){
     try{
+      setShowSpinner(true);
       const apiData = await fetch(`${Api}/auth/login`,{
         method: "POST",
         headers : {"Content-Type": "application/json"},
         body : JSON.stringify({...input})
       });
+      setShowSpinner(false);
       const data = await apiData.json();
       // console.log(apiData);
       // console.log(data);
@@ -71,6 +74,11 @@ const Login = ({ setShowLogin, setShowShowSignUp, setUserData, Api }) => {
           </div>
 
         </div>
+        {
+                    showSpinner &&
+                 <div className="w-15 h-15 border-8 border-blue-500 border-t-transparent rounded-full motion-safe:animate-spin absolute"></div>
+
+                }
       </div>
     </>
   )
