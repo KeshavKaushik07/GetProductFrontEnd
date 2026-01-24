@@ -32,7 +32,7 @@ const Cart = ({ cart, setCart, totalPrice, userData }) => {
   return (
     <>
       {showCheckOut ?
-        <CheckOut setShowCheckOut={setShowCheckOut} />
+        <CheckOut setShowCheckOut={setShowCheckOut} totalPrice={totalPrice} setCart={setCart} cart={cart}/>
         :
         <>
           <h1 className="text-2xl font-bold m-10 flex justify-center">Your Cart 🛒</h1>
@@ -62,7 +62,7 @@ const Cart = ({ cart, setCart, totalPrice, userData }) => {
             <span>Total Price : ${totalPrice}</span>
             {userData ?
               <button
-                className="bg-amber-300 sm:w-48 px-4 py-3 rounded cursor-pointer mb-3"
+                className="bg-amber-300 sm:w-48 px-4 py-3 rounded cursor-pointer mb-3 shadow-xl"
                 onClick={() => { setShowCheckOut(true) }}>
                 Checkout
               </button>
