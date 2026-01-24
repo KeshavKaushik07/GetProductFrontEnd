@@ -66,7 +66,7 @@ const Cart = ({ cart, setCart, totalPrice, userData }) => {
                 onClick={() => { setShowCheckOut(true) }}>
                 Checkout
               </button>
-              : <button className="bg-amber-200 sm:w-48 px-4 py-3 rounded mb-3" disabled title='Login to checkout' onClick={()=> alert("please Login")}> Checkout </button>}
+              : <button className="bg-amber-200 sm:w-48 px-4 py-3 rounded mb-3" title='Login to checkout' onClick={()=> alert("please Login")}> Checkout </button>}
 
 
           </div>}
