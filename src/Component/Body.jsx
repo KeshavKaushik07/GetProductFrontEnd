@@ -16,7 +16,7 @@ const Body = ({ noFilter, setApiData, Api, toAddCart, orgPoductApi, setNoFilter,
 
   return (
     <>
-      <div className="filter flex gap-2 justify-center align-baseline flex-wrap mb-4 mt-2">
+      <div className="filter flex gap-3 sm:gap-2 justify-center align-baseline flex-wrap mb-4 mt-2">
         <span className='font-bold text-2xl'>Catagory : </span>
         <Button variant="outline-primary" onClick={() => filter("shirt")}><span className='text-xl font-bold'>shirt</span></Button>
         <Button variant="outline-primary" onClick={() => filter("jeans")}><span className='text-xl font-bold'>jeans</span></Button>
