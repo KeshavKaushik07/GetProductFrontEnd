@@ -81,7 +81,7 @@
   color: #444;
 }
 
-.inputs input {
+.getInput {
   width: 100%;
   padding: 10px 12px;
   border: 1px solid #ccc;
@@ -95,6 +95,15 @@
   border: 1px solid #0078d7;
   outline: none;
   box-shadow: 0 0 5px rgba(0, 120, 215, 0.3);
+}
+.errorInput{
+   width: 100%;
+  padding: 10px 12px;
+  border: 2px solid red;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border 0.2s ease-in-out;
+  color: black;
 }
 
 /* Login switch text */
@@ -167,4 +176,9 @@
     width: 90%;
     padding: 30px 20px;
   }
+}
+
+#errorName{
+  font-size: 15px;
+  color: red;
 }

@@ -13,9 +13,51 @@ const Register = ({ Api, setShowLogin, setShowShowSignUp, setUserData }) => {
     });
     const [success, setSuccess] = useState(false);
     const [error, setError] = useState(false);
-    const [showSpinner, setShowSpinner] = useState(false)
+    const [validateError, setValidateError] = useState({});
+    const [showSpinner, setShowSpinner] = useState(false);
+
+    function checkValid() {
+        const newErrors = {};
+
+        if (!input.userName.trim()) {
+            newErrors.userName = 'Name is required';
+        }
+
+        if (!input.email.trim()) {
+            newErrors.email = 'Email is required';
+        } else if (!/\S+@\S+\.\S+/.test(input.email)) {
+            newErrors.email = 'Email is invalid';
+        }
+
+        if (!input.phone.trim()) {
+            newErrors.phone = 'Phone number is required';
+        } else if (!/^\d{10}$/.test(input.phone)) {
+            newErrors.phone = 'Phone number must be 10 digits';
+        }
+
+        if (!input.address.trim()) {
+            newErrors.address = 'Address is required';
+        }
+
+        if (!input.password.trim()) {
+            newErrors.password = 'password is required';
+        }
+
+        if (!input.answer.trim()) {
+            newErrors.answer = 'provide an answer';
+        }
+
+        return newErrors;
+    }
+
     async function submitHandle() {
         try {
+            const valid = checkValid();
+            if (Object.keys(valid).length > 0) {
+                setValidateError(valid);
+                return;
+            }
+
             setShowSpinner(true);
             const apiData = await fetch(`${Api}/auth/register`, {
                 method: "POST",
@@ -44,24 +86,24 @@ const Register = ({ Api, setShowLogin, setShowShowSignUp, setUserData }) => {
                 setError(false);
             } else {
                 setError(data.message);
-                setTimeout(()=>{
+                setTimeout(() => {
                     setError(false);
-                },1500)
+                }, 1500)
             }
 
         } catch (err) {
             console.log("error in sign up : ", err);
         }
     }
-    // useEffect(()=>{
-    //     console.log(input);
-    // },[input])
+    useEffect(() => {
+        setValidateError({});
+    }, [input])
     return (
         <>
             <div className={`${style.mainContainer} z-999`}>
 
                 <div className={style.container}>
-                    
+
                     <img src={img} alt="" />
                     <div className={style.formContainer}>
                         <p style={{ textAlign: "center" }}>Get start with Free Account</p>
@@ -70,11 +112,13 @@ const Register = ({ Api, setShowLogin, setShowShowSignUp, setUserData }) => {
                                 <div key={key} className={style.inputs}>
                                     <label htmlFor="">{`${key} : `}</label>
                                     <input
+                                        className={validateError[`${key}`]?style.errorInput:style.getInput}
                                         type={key === "password" ? "password" : key === "email" ? "email" : "text"}
                                         onChange={e => setInput({ ...input, [key]: e.target.value })}
                                         placeholder={key}
                                         value={input[key]}
                                         required />
+                                    {validateError[`${key}`] && <p id={style.errorName}>{validateError[`${key}`]}</p>}
                                 </div>
                             ))}
                         </div>
@@ -94,7 +138,7 @@ const Register = ({ Api, setShowLogin, setShowShowSignUp, setUserData }) => {
                 </div>
                 {
                     showSpinner &&
-                 <div className="w-15 h-15 border-8 border-blue-500 border-t-transparent rounded-full motion-safe:animate-spin absolute"></div>
+                    <div className="w-15 h-15 border-8 border-blue-500 border-t-transparent rounded-full motion-safe:animate-spin absolute"></div>
 
                 }
             </div>

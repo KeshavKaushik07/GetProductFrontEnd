@@ -66,11 +66,10 @@ const App = () => {
 
   useEffect(() => {
     // console.log(cart)
+    console.log(cart)
     setCount(cart.length);
     setTotalPrice(cart.reduce((sum, item) => sum + (item.price * item.quantity), 0).toFixed(2));
-    if(userData){
        localStorage.setItem("Cart", JSON.stringify(cart));
-    }
    
   }, [cart])
 
