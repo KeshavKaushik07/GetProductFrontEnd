@@ -50,6 +50,41 @@ const Login = ({ setShowLogin, setShowShowSignUp, setUserData, Api }) => {
     }
   }
 
+  async function handleForgot(e) {
+    e.preventDefault();
+    try {
+      setShowSpinner(true);
+
+      const apiData = await fetch(`${Api}/auth/forgotPass`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ ...forgotInput })
+      });
+
+      setShowSpinner(false);
+
+      const data = await apiData.json();
+      if (data.success) {
+        setForgotInput({
+          email: "",
+          password: "",
+          answer: ""
+        });
+        setShowForgot(false);
+        alert(data.message);
+
+      } else {
+
+        alert(data.message);
+
+      }
+
+    }
+    catch (err) {
+      console.log("error in forgotting : ", err);
+    }
+  }
+
   // useEffect(() => { console.log(input) }, [input]);
 
   return (
@@ -107,7 +142,7 @@ const Login = ({ setShowLogin, setShowShowSignUp, setUserData, Api }) => {
                 <input
                   type={!showForPass ? "password" : "text"}
                   required
-                  onChange={(e) => setForgotInput({ ...forgotInput,password: e.target.value })}
+                  onChange={(e) => setForgotInput({ ...forgotInput, password: e.target.value })}
                   placeholder='Enter password'
                   name='password' />
                 <label htmlFor="password">Conform password : </label>
@@ -123,6 +158,7 @@ const Login = ({ setShowLogin, setShowShowSignUp, setUserData, Api }) => {
                 </div>
                 <button type="submit"
                   className="bg-amber-600 w-full self-center py-2 px-3 rounded text-white mt-2 font-bold"
+                  onClick={(e) => handleForgot(e)}
                 >Update</button>
               </div>
             </form>
