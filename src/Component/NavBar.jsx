@@ -41,8 +41,8 @@ function NavBar({ count, onClick, setFilter, orgProductApi, userData, setUserDat
   // }
   return (
     <div className='sticky top-0 z-10 '>
-      <Navbar expand="lg" className="bg-black navbar-dark">
-        <Container fluid className=' bg-black text-2xl p-4'>
+      <Navbar expand="lg" className="bg-linear-to-r from-black to-gray-600 navbar-dark">
+        <Container fluid className='text-2xl p-4'>
           <NavLink to={"/"} style={{ textDecoration: "none" }}>
             <span className='text-2xl md:text-4xl text-white font-bold'>GetProduct!</span>
 

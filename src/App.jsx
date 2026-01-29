@@ -18,7 +18,7 @@ const App = () => {
   const [addCartAnimation, setAddCartAnimation] = useState(false);
   const [showItemDetail, setShowItemDetail] = useState(false);
   const [productDetail, setProductDetail] = useState({});
-  const [userData, setUserData] = useState(true);
+  const [userData, setUserData] = useState(false);
   // toast.configure();
   let rup = "₹";
 
